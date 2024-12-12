@@ -267,6 +267,27 @@ class CardPointe
         return new InquireResponse($res);
     }
 
+        /**
+     * Get the status of a transaction with orderID.
+     *
+     * @param array $retref transaction id
+     *
+     * @return \Dewbud\CardConnect\Responses\InquireResponse
+     */
+    public function inquire(string $orderid)
+    {
+        $params = [
+            'merchid' => $this->merchant_id,
+        ];
+
+        $res = $this->send('GET', "inquireByOrderid/{$orderid}/{$this->merchant_id}", $params);
+
+        $res = $this->parseResponse($res);
+
+        return new InquireResponse($res);
+    }
+
+
     /**
      * Get settlement status for a given day.
      *
