@@ -7,6 +7,7 @@ use Dewbud\CardConnect\Requests\AuthorizationRequest;
 use Dewbud\CardConnect\Responses\AuthorizationResponse;
 use Dewbud\CardConnect\Responses\CaptureResponse;
 use Dewbud\CardConnect\Responses\InquireResponse;
+use Dewbub\Cardconnect\Responses\InquireOrderResponse;
 use Dewbud\CardConnect\Responses\RefundResponse;
 use Dewbud\CardConnect\Responses\Response;
 use Dewbud\CardConnect\Responses\SettlementResponse;
