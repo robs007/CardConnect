@@ -285,7 +285,7 @@ class CardPointe
 
         $res = $this->parseResponse($res);
 
-        return new InquireOrderResponse($res);
+        return new InquireResponse($res);
     }
 
 
