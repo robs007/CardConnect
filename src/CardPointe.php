@@ -267,24 +267,24 @@ class CardPointe
         return new InquireResponse($res);
     }
 
-        /**
-     * Get the status of a transaction with orderID.
+ /**
+     * Get status of a transaction with order id.
      *
-     * @param array $retref transaction id
+     * @param array $orderid transaction id
      *
-     * @return \Dewbud\CardConnect\Responses\InquireResponse
+     * @return \Dewbud\CardConnect\Responses\InquireOrderResponse
      */
-    public function inquire(string $orderid)
+    public function inquireByOrderid(string $orderid)
     {
         $params = [
             'merchid' => $this->merchant_id,
         ];
 
-        $res = $this->send('GET', "inquireByOrderid/{$orderid}/{$this->merchant_id}", $params);
+        $res = $this->send('GET', "inquireByOrderid/{$orderid}/{$this->merchant_id}/1", $params);
 
         $res = $this->parseResponse($res);
 
-        return new InquireResponse($res);
+        return new InquireOrderResponse($res);
     }
 
 
