@@ -68,6 +68,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @return array
      */
+     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->toArray();
@@ -80,6 +81,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @return string
      */
+     #[\ReturnTypeWillChange]
     public function toJson($options = 0)
     {
         return json_encode($this->jsonSerialize(), $options);
@@ -92,6 +94,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @return bool
      */
+     #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->attributes[$offset]);
@@ -104,6 +107,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @return mixed
      */
+     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->get($offset);
@@ -115,6 +119,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      * @param string $offset
      * @param mixed  $value
      */
+     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->attributes[$offset] = $value;
@@ -125,6 +130,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @param string $offset
      */
+     #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->attributes[$offset]);
@@ -138,6 +144,7 @@ class Fluent implements ArrayAccess, JsonSerializable
      *
      * @return $this
      */
+     
     public function __call($method, $parameters)
     {
         $this->attributes[$method] = count($parameters) > 0 ? $parameters[0] : true;
