@@ -273,7 +273,7 @@ class CardPointe
      *
      * @param array $orderid transaction id
      *
-     * @return \Dewbud\CardConnect\Responses\InquireOrderResponse
+     * @return \Dewbud\CardConnect\Responses\InquireResponse
      */
     public function inquireByOrderid(string $orderid)
     {
